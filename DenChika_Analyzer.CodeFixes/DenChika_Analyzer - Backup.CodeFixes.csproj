@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <RootNamespace>DenChika_Analyzer</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="3.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DenChika_Analyzer\DenChika_Analyzer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="CodeFixResourcesListsAndArrays.Designer.cs" DesignTime="True" AutoGen="True" DependentUpon="CodeFixResources.resx" />
+    <EmbeddedResource Update="CodeFixResourcesListsAndArrays.resx" Generator="ResXFileCodeGenerator">
+      <LastGenOutput>CodeFixResourcesOPoint.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Update="CodeFixResourcesMagicLiterals.Designer.cs">
+      <DependentUpon>CodeFixResourcesIpoint.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>
